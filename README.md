@@ -1,9 +1,7 @@
 # jspsych-vislexdec-vp-vm
-Template Visual [Lexical Decision](https://en.wikipedia.org/wiki/Lexical_decision_task) experiment with _masked_ _visual prime_. 
+Visual [Lexical Decision](https://en.wikipedia.org/wiki/Lexical_decision_task) experiment with _Masked_ _Visual Prime_. 
 
 # Connected templates
-
-The current status of cnnected Lexical Decision Templates
 
 ### Visual Templates
 1. [vislexdec](https://github.com/UiL-OTS-labs/jspsych-vislexdec)
