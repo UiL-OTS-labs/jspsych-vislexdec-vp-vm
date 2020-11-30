@@ -1,9 +1,9 @@
 # jspsych-vislexdec-vp-vm
-Template [visual lexical decision](https://en.wikipedia.org/wiki/Lexical_decision_task) experiment with _masked_ _visual prime_. 
+Template Visual [Lexical Decision](https://en.wikipedia.org/wiki/Lexical_decision_task) experiment with _masked_ _visual prime_. 
 
 # Connected templates
 
-The current status of Lexical Decision Templates
+The current status of cnnected Lexical Decision Templates
 
 ### Visual Templates
 1. [vislexdec](https://github.com/UiL-OTS-labs/jspsych-vislexdec)
@@ -11,9 +11,9 @@ The current status of Lexical Decision Templates
 3. [vislexdec-vp-mp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp-vm)
 
 ### Audio and/or visual Templates
-4. [audlexdec-vp-mp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp-mp)
+4. [audlexdec](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
 5. [audlexdec-vp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
-6. [audlexdec](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
+6. [audlexdec-vp-mp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp-mp)
 
 
 # Task Description
