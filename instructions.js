@@ -12,23 +12,59 @@
  * The strings are concatenated together by adding (+) them
  * together.
  */
+// const PRE_PRACTICE_INSTRUCTION =
+//     "<strong>Dear participant,</strong><BR><BR>"        +
+//     "Thank you for participating in this experiment."   +
+//     "<BR><BR>"                                          +
+//     "You are now going to see words on the screen, one" +
+//     " after the other. The words come in pairs. "       +
+//     "Your task is to indicate for each pair as quickly" +
+//     " as possible whether you think "                   +
+//     "<i>both words are real words or not</i>."          +
+//     " Try to make no mistakes.<BR><BR>"                 +
+//     "To respond, hit the <kbd>%correct_key%</kbd> "     +
+//     "key for <i>Yes</i> and the "                       +
+//     "<kbd>%incorrect_key%</kbd> key for <i>No</i>"      +
+//     "<BR><BR>First, you can practice.<BR><BR>"          +
+//     "<i>Click OK to start practicing</i>"
+//     ;
+
 const PRE_PRACTICE_INSTRUCTION =
-    "<strong>Dear participant,</strong><BR><BR>"        +
-    "Thank you for participating in this experiment."   +
+    "<strong>Dear participant</strong>,<BR><BR>"        +
+
+    "thank you for participating in this experiment."   +
     "<BR><BR>"                                          +
+
     "You are now going to see words on the screen, one" +
     " after the other. The words come in pairs. "       +
     "Your task is to indicate for each pair as quickly" +
     " as possible whether you think "                   +
-    "<i>both words are real words or not</i>."          +
-    " Try to make no mistakes.<BR><BR>"                 +
-    "To respond, hit the <kbd>%correct_key%</kbd> "     +
-    "key for <i>Yes</i> and the "                       +
-    "<kbd>%incorrect_key%</kbd> key for <i>No</i>"      +
-    "<BR><BR>First, you can practice.<BR><BR>"          +
-    "<i>Click OK to start practicing</i>"
+    "<i>both words are real words or not</i>. "         +
+    "Try to make no mistakes.<BR><BR>"                  +
+
+    "Put your index fingers on the two "                + 
+    "keys you've just set. Try keep them in those "     +
+    "positions during the <i>entire experiment</i>!<BR>"+
+
+    "<ul>"                                              + 
+    "<li>Hit the <kbd>%correct_key%</kbd> key for "     + 
+    "<strong>Yes</strong>. "                            + 
+    "<sub>(Use this 'Yes' key to proceed throughout "   + 
+    "the experiment).</sub></li>"                       +
+    "<li>Hit the <kbd>%incorrect_key%</kbd> key for "   +
+    "<strong>No</strong>.</li>"                         + 
+    "</ul>"                                             +
+
+    "First, you can practice.<BR><BR>"                  +
+    "<i>Click OK to start practicing.</i>"
     ;
 
+const PREPARE_YES_KEY_PROMPT = `
+    <strong>Get your index fingers in position!</strong>
+    <BR><BR>
+    Hit your <kbd>%correct_key%</kbd> key<BR><sub>(your 'yes' 
+    key)</sub> to start. 
+    `
 
 const PRE_TEST_INSTRUCTION = 
     "End of the practice part.<BR><BR>"                 +

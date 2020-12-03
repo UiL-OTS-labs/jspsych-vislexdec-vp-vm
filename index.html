@@ -103,6 +103,13 @@
         
         var chosen_keyboard = undefined;
 
+        var left_key_chosen_ascii = undefined;
+        var left_key_chosen_char = undefined;
+
+        var right_key_chosen_ascii = undefined;
+        var right_key_chosen_char = undefined;
+
+
         function getLeftOrRightHanded()
         {
             let data = jsPsych.data.get().select('survey_multi_choice_responses');
@@ -321,13 +328,13 @@
                 let key_chosen_ascii = data.key_press;
                 let key_chosen_char = 
                     upperCaseFromASCII(key_chosen_ascii); //blanks for other than 0-9 & A-Z
-                data.key_confirmed = data.key_press == expected_key_press;
-                data.key_chosen_ascii = key_chosen_ascii;
-                data.key_chosen_char = key_chosen_char;
+                data.left_key_confirmed = data.key_press == expected_key_press;
+                data.left_key_chosen_ascii = key_chosen_ascii;
+                data.left_key_chosen_char = key_chosen_char;
 
                 // We use === instead of a straight assignment to ensure we
                 // don't get undefined as a value
-                left_key_confirmed = data.key_confirmed === true;
+                left_key_confirmed = data.left_key_confirmed === true;
             }
         };
 
@@ -381,13 +388,13 @@
                     );
                 let key_chosen_ascii = data.key_press;
                 let key_chosen_char = upperCaseFromASCII(key_chosen_ascii);
-                data.key_confirmed = data.key_press == expected_key_press;
-                data.key_chosen_ascii = key_chosen_ascii;
-                data.key_chosen_char = key_chosen_char;
+                data.right_key_confirmed = data.key_press == expected_key_press;
+                data.right_key_chosen_ascii = key_chosen_ascii;
+                data.right_key_chosen_char = key_chosen_char;
 
                 // We use === instead of a straight assignment to ensure we
                 // don't get undefined as a value
-                right_key_confirmed = data.key_confirmed === true;
+                right_key_confirmed = data.right_key_confirmed === true;
             }
         };
 
@@ -428,6 +435,23 @@
             },
             choices: [OK_BUTTON_TEXT],
             response_ends_trial: true,
+        };
+
+        let participant_keyboard_control_start = {
+            type: 'html-keyboard-response',
+            stimulus: function(){
+                let text = PREPARE_YES_KEY_PROMPT;
+                text = text.replace('%correct_key%', getCorrectKey())
+                return "<div class='instruction' >" +
+                       "<p>" + text + "</p></div>";
+            },
+            choices: function(){
+                let choice = getCorrectKey();
+                return [choice];
+            },
+            //trial_duration: 10000,
+            trial_ends_after_response: true,
+            post_trial_gap: 300,
         };
 
         let well_done_screen = {
@@ -661,8 +685,10 @@
         
         // task instruction
         timeline.push(instruction_screen_practice);
+        timeline.push(participant_keyboard_control_start);
         timeline.push(practice_procedure);
         timeline.push(well_done_screen);
+        timeline.push(participant_keyboard_control_start);
 
         // NOTE options below! comment/uncomment for regular vs restrained randomization
         // true randomness is better for the current template's amount of items...
