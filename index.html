@@ -342,7 +342,7 @@
             type: 'html-button-response',
             stimulus: function() {
                 let wanted_key = KEYBOARD_DEFAULTS[chosen_keyboard]['left_key'];
-                let chosen_key = jsPsych.data.getLastTrialData().values()[0].key_chosen_char;
+                let chosen_key = jsPsych.data.getLastTrialData().values()[0].left_key_chosen_char;
                 return "<p> You were asked to press: " + wanted_key + "<BR><BR>" + 
                        "You pressed: " + chosen_key +
                        "<BR><BR>Try again, please...</p>";
@@ -403,7 +403,7 @@
             stimulus: function() {
                 let wanted_key = KEYBOARD_DEFAULTS[chosen_keyboard]['right_key'];
                 let chosen_key = 
-                    jsPsych.data.getLastTrialData().values()[0].key_chosen_char;
+                    jsPsych.data.getLastTrialData().values()[0].right_key_chosen_char;
                 return "<p> You were asked to press: " + wanted_key + "<BR><BR>" + 
                        "You pressed: " + chosen_key +
                        "<BR><BR>Try again, please...</p>";
