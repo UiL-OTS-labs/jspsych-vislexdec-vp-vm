@@ -55,6 +55,7 @@
         text-align: left !important;
     }
 
+
     kbd {
         border-radius: 2px;
         padding: 2px;
@@ -109,6 +110,9 @@
         var right_key_chosen_ascii = undefined;
         var right_key_chosen_char = undefined;
 
+        var timeLeft = 7;
+        var countdown_element = document.getElementById('europe');
+        
 
         function getLeftOrRightHanded()
         {
@@ -137,6 +141,23 @@
             character = String.fromCharCode(keycode);
             return character.toUpperCase();
         }
+
+        function finalCountdown(seconds)
+
+        {
+            var timeleft = seconds;
+            var downloadTimer = setInterval(function(){
+                if(timeleft <= 0){
+                    clearInterval(downloadTimer);
+                    document.getElementById("europe").innerHTML = "Finished";
+                } else {
+                    document.getElementById("europe").innerHTML = timeleft + " seconds remaining";
+                }
+                timeleft -= 1;
+            }, 1000);
+        }
+
+       
 
         // data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
@@ -454,6 +475,19 @@
             post_trial_gap: 300,
         };
 
+        let participant_timed_start = {
+            type: 'html-keyboard-response',
+            stimulus: function(){
+                hate = finalCountdown(7)
+                return "<div id='europe' ></div>";
+            },
+            choices: jsPsych.NO_KEYS,
+            //trial_duration: 10000,
+            trial_ends_after_response: true,
+            post_trial_gap: 300,
+        };
+
+
         let well_done_screen = {
             type: 'html-button-response',
             stimulus: function(){
@@ -551,7 +585,7 @@
                 useful_data_flag: true,
             },
             on_finish: function(data){
-                let correct_key = getCorrectKey()
+                let correct_key = getCorrectKey();
                 let incorrect_key = getIncorrectKey();
                 let correct;
 
@@ -685,7 +719,9 @@
         
         // task instruction
         timeline.push(instruction_screen_practice);
-        timeline.push(participant_keyboard_control_start);
+        //timeline.push(participant_keyboard_control_start);
+        timeline.push(participant_timed_start);
+
         timeline.push(practice_procedure);
         timeline.push(well_done_screen);
         timeline.push(participant_keyboard_control_start);

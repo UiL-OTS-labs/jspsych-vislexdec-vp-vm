@@ -79,7 +79,7 @@ const AZERTY = { kb_type: 'AZERTY', left_key: "Q", right_key: "M" };
 const DVORAK = { kb_type: 'DVORAK', left_key: "A", right_key: "S" };
 const QWERTZ = { kb_type: 'QWERTZ', left_key: "A", right_key: "L" };
 const CUSTOM = { kb_type: 'CUSTOM', left_key: "1", right_key: "0" };
-
+ 
 // Quick lookup table
 const KEYBOARD_DEFAULTS = {
     'QWERTY': QWERTY,
