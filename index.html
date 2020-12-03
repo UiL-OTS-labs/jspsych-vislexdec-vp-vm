@@ -149,15 +149,13 @@
             var downloadTimer = setInterval(function(){
                 if(timeleft <= 0){
                     clearInterval(downloadTimer);
-                    document.getElementById("europe").innerHTML = "Finished";
+                    document.getElementById("europe").innerHTML = "Godot, Youssou 'n Dour & Europe...";
                 } else {
                     document.getElementById("europe").innerHTML = timeleft + " seconds remaining";
                 }
                 timeleft -= 1;
             }, 1000);
         }
-
-       
 
         // data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
