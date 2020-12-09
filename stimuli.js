@@ -13,13 +13,13 @@ const PRACTICE_ITEMS = [
     {
         id: 1, 
         item_type: NON_WORD,
-        word: "palve", 
+        word: "PALVE", 
         prime: "onion",
         pmask: "#####" 
     },
     { id: 2,
         item_type: UNRELATED,
-        word: "hot",
+        word: "HOT",
         prime: "stapler",
         pmask: "#######"
     }
@@ -29,56 +29,56 @@ const LIST_GROUP1 = [
     {
         id: 1,
         item_type: NON_WORD,
-        word: "slirque",
+        word: "SLIRQUE",
         prime: "eyes",
         pmask: "####"
     },
     {
         id: 2,
         item_type: NON_WORD,
-        word: "crawse",
+        word: "CRAWSE",
         prime: "piano",
         pmask: "#####"
     },
     {
         id: 3,
         item_type: NON_WORD,
-        word: "thwurp",
+        word: "THWURP",
         prime: "rabbit",
         pmask: "######"
     },
     {
         id: 4,
         item_type: NON_WORD,
-        word: "clem",
+        word: "CLEM",
         prime: "flower",
         pmask: "######"
     },
     {
         id: 5,
         item_type: RELATED,
-        word: "white",
+        word: "WHITE",
         prime: "snow",
         pmask: "####" 
     },
     {
         id: 6,
         item_type: RELATED,
-        word: "travel",
+        word: "TRAVEL",
         prime: "suitcase",
         pmask: "########"
     },
     {
         id: 7,
         item_type: UNRELATED,
-        word: "letter",
+        word: "LETTER",
         prime: "garden",
         pmask: "######"
     },
     {
         id: 8,
         item_type: UNRELATED,
-        word: "clown",
+        word: "CLOWN",
         prime: "forest",
         pmask: "######" 
     }
@@ -128,25 +128,4 @@ function pickRandomGroup() {
     var shuffled_range = jsPsych.randomization.repeat(range(num_groups), 1)
     var retgroup = TEST_ITEMS[shuffled_range[0]];
     return retgroup
-}
-
-//trying something, let's test from here
-function youssouNDour(){        
-    var timeLeft = 7;
-    var elem = document.getElementById('europe');
-    var timerId = setInterval(countdown, 1000);
-
-    function countdown() {
-        if (timeLeft == -1) {
-            clearTimeout(timerId);
-            doSomething();
-        } else {
-            elem.innerHTML = timeLeft + ' seconds remaining';
-            timeLeft--;
-        }
-    }
-
-    function doSomething() {
-        alert("Hey! Are you paying attention there?");
-    }
 }

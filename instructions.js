@@ -12,22 +12,6 @@
  * The strings are concatenated together by adding (+) them
  * together.
  */
-// const PRE_PRACTICE_INSTRUCTION =
-//     "<strong>Dear participant,</strong><BR><BR>"        +
-//     "Thank you for participating in this experiment."   +
-//     "<BR><BR>"                                          +
-//     "You are now going to see words on the screen, one" +
-//     " after the other. The words come in pairs. "       +
-//     "Your task is to indicate for each pair as quickly" +
-//     " as possible whether you think "                   +
-//     "<i>both words are real words or not</i>."          +
-//     " Try to make no mistakes.<BR><BR>"                 +
-//     "To respond, hit the <kbd>%correct_key%</kbd> "     +
-//     "key for <i>Yes</i> and the "                       +
-//     "<kbd>%incorrect_key%</kbd> key for <i>No</i>"      +
-//     "<BR><BR>First, you can practice.<BR><BR>"          +
-//     "<i>Click OK to start practicing</i>"
-//     ;
 
 const PRE_PRACTICE_INSTRUCTION =
     "<strong>Dear participant</strong>,<BR><BR>"        +
@@ -43,7 +27,8 @@ const PRE_PRACTICE_INSTRUCTION =
     "<i>real word or not</i>. "                         +
     "Try to make no mistakes.<BR><BR>"                  +
 
-    "Put your index fingers on the two "                + 
+    "After clicking okay here, please put your "        +
+    "<i>index</i> fingers on the two "                  + 
     "keys you've just set. Try keep them in those "     +
     "positions during the <i>entire experiment</i>!<BR>"+
 

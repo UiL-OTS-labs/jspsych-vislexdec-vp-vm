@@ -143,18 +143,19 @@
         }
 
         function finalCountdown(seconds)
-
         {
-            var timeleft = seconds;
-            var downloadTimer = setInterval(function(){
+            let timeleft = seconds;
+            let someTimer = setInterval(function(){
                 if(timeleft <= 0){
-                    clearInterval(downloadTimer);
-                    document.getElementById("europe").innerHTML = "Godot, Youssou 'n Dour & Europe...";
+                    clearInterval(someTimer);
+                    return
                 } else {
                     document.getElementById("europe").innerHTML = timeleft + " seconds remaining";
+                    return
                 }
                 timeleft -= 1;
             }, 1000);
+            return
         }
 
         // data one would like to add to __all__ trials, according to:
@@ -168,7 +169,8 @@
         });
 
 
-        let start_screen = {
+        let start_screen = 
+        {
             type: 'html-button-response',
             stimulus: function(){
                 return "<div class='instruction' >" +
@@ -473,19 +475,6 @@
             post_trial_gap: 300,
         };
 
-        let participant_timed_start = {
-            type: 'html-keyboard-response',
-            stimulus: function(){
-                hate = finalCountdown(7)
-                return "<div id='europe' ></div>";
-            },
-            choices: jsPsych.NO_KEYS,
-            //trial_duration: 10000,
-            trial_ends_after_response: true,
-            post_trial_gap: 300,
-        };
-
-
         let well_done_screen = {
             type: 'html-button-response',
             stimulus: function(){
@@ -715,13 +704,19 @@
         timeline.push(keyboard_set_key_left_procedure);
         timeline.push(keyboard_set_key_right_procedure);
         
-        // task instruction
+        // task instruction (still with button)
         timeline.push(instruction_screen_practice);
-        //timeline.push(participant_keyboard_control_start);
-        timeline.push(participant_timed_start);
 
+        // a keyboard dominant hand configured key continue/prepare flow
+        timeline.push(participant_keyboard_control_start);
+        
+        // practice block
         timeline.push(practice_procedure);
+
+        // 'feedback'
         timeline.push(well_done_screen);
+        
+        // and a new 'prepare for action' flow
         timeline.push(participant_keyboard_control_start);
 
         // NOTE options below! comment/uncomment for regular vs restrained randomization
