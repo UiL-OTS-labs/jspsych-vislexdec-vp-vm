@@ -109,11 +109,7 @@
 
         var right_key_chosen_ascii = undefined;
         var right_key_chosen_char = undefined;
-
-        var timeLeft = 7;
-        var countdown_element = document.getElementById('europe');
         
-
         function getLeftOrRightHanded()
         {
             let data = jsPsych.data.get().select('survey_multi_choice_responses');
@@ -142,22 +138,6 @@
             return character.toUpperCase();
         }
 
-        function finalCountdown(seconds)
-        {
-            let timeleft = seconds;
-            let someTimer = setInterval(function(){
-                if(timeleft <= 0){
-                    clearInterval(someTimer);
-                    return
-                } else {
-                    document.getElementById("europe").innerHTML = timeleft + " seconds remaining";
-                    return
-                }
-                timeleft -= 1;
-            }, 1000);
-            return
-        }
-
         // data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
         let subject_id = jsPsych.randomization.randomID(8);
@@ -167,7 +147,6 @@
             subject: subject_id,
             group: group_name,
         });
-
 
         let start_screen = 
         {
@@ -179,7 +158,6 @@
             choices: [OK_BUTTON_TEXT],
             response_ends_trial: true
         };
-
 
         let survey_multi_html_block = {
             type: 'survey-html-form',
@@ -715,15 +693,16 @@
 
         // 'feedback'
         timeline.push(well_done_screen);
-        
+
         // and a new 'prepare for action' flow
         timeline.push(participant_keyboard_control_start);
 
         // NOTE options below! comment/uncomment for regular vs restrained randomization
         // true randomness is better for the current template's amount of items...
 
-        //timeline.push(trial_procedure_pseudo_random); // don't do this with little stimuli
+        //timeline.push(trial_procedure_pseudorandom); // don't do this with little stimuli
         timeline.push(trial_procedure_random);
+
         timeline.push(end_screen);
 
         // Start jsPsych when running on a Desktop or Laptop style pc.

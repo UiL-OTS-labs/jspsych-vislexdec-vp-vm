@@ -96,4 +96,3 @@ const DEBRIEF_MESSAGE = `
 
 const DEBRIEF_MESSAGE_DURATION = 3000;
 
-const SEVEN_SECONDS = 7.0; //3/4/7/ waltzing a bit here
