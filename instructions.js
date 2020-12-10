@@ -27,7 +27,7 @@ const PRE_PRACTICE_INSTRUCTION =
     "<i>real word or not</i>. "                         +
     "Try to make no mistakes.<BR><BR>"                  +
 
-    "After clicking okay here, please put your "        +
+    "After clicking OK, please put your "               +
     "<i>index</i> fingers on the two "                  + 
     "keys you've just set. Try keep them in those "     +
     "positions during the <i>entire experiment</i>!<BR>"+
