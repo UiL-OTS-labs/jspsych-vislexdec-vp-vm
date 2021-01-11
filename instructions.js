@@ -20,11 +20,9 @@ const PRE_PRACTICE_INSTRUCTION =
     "<BR><BR>"                                          +
 
     "You are now going to see words on the screen, one "+
-    "after the other. The words come in pairs. "        +
-    "Your task is to indicate for each pair as quickly "+
-    "as possible whether you think the word written "   +
-    "in CAPITALS is word is a "                         +
-    "<i>real word or not</i>. "                         +
+    "after the other. Your task is to indicate as "     +
+    "quickly as possible for each UPPER CASE word "     +
+    "wther you think it is a <i>real word or not</i>. " +
     "Try to make no mistakes.<BR><BR>"                  +
 
     "After clicking OK, please put your "               +
