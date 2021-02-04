@@ -5,12 +5,9 @@ Visual [Lexical Decision](https://en.wikipedia.org/wiki/Lexical_decision_task) e
 Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) for some context and scope.
 
 # Task Description
+This is one of many 'standard' variations of a visual lexical decision task.
 
-## Short description
-
-This is one of many 'standard' variations of a visual lexical decision task. The 'parent' of this boilerplate/template is the general visual [Lexical Decision With Visual Prime](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp/).
-
-The participant first sees a fixation cross, then a (forward) _masked_ prime is presented, followed by the second stimulus (the response word or non-word). Particpants are instructed to respond as quickly as possible to make the decision if the (last) word, written in UPPER CASE is a word or not, using the keyboard.
+The participant first sees a fixation cross, then a (forward) _mask_ is presented, followed by the a visual _prime_ and then the response item (decision phase). Particpants are instructed to respond as quickly as possible to make the decision if the (last) word, written in UPPER CASE, is a word or not, using the keyboard.
 
 - The (forward) _mask_ is a string of characters of (preferably) the same amount of characters as the prime.
 - The _prime_ is a string of letters and can be a real word or a nonword.
@@ -18,16 +15,16 @@ The participant first sees a fixation cross, then a (forward) _masked_ prime is 
 
 A reference that descibes this variant's method:
 
-Jacob, G., Heyer, V., & Veríssimo, J. (2018). Aiming at the same target: A masked priming study directly comparing derivation and inflection in the second language. International Journal of Bilingualism, 22(6), 619–637. https://doi.org/10.1177/1367006916688333
+		Jacob, G., Heyer, V., & Veríssimo, J. (2018). Aiming at the same target: A masked priming study directly comparing derivation and inflection in the second language. International Journal of Bilingualism, 22(6), 619–637. https://doi.org/10.1177/1367006916688333
 
-The essential sub trial phases for _one_ trial for this boilerplate experiment are:
 
-1. Fixation cross presentation (fixed time, no responses are recorded) 
-2. Mask presentation (fixed time, no responses are recorded)
-3. Prime presentation (fixed time, no responses are recorded)
-4. Test stimulus presentation (the last string of letters of the presented pair, lexical decision phase). 
+Crucial trial phases (sub trial phases):
+- Fixation cross
+- Visual Mask
+- Visual Prime
+- Lexical decision (decision phase)
 
-Only in this _last phase_, as soon as the "test item" is being presented, the participant can respond with the keyboard.
+Only in this _last phase_, as soon as the item is being presented, the participant can respond with the keyboard.
 
 # Output
 The data of _all_ (sub) _trial phases_ are logged in the data, but the output data can be filtered after data collection in many ways.
