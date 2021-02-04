@@ -51,7 +51,8 @@ const PRE_PRACTICE_INSTRUCTION =
 
 const PREPARE_YES_KEY_PROMPT = `
     <strong>Get your index fingers in position!</strong>
-    <br><br>
+    <br>
+    <br>
     Hit your <kbd>%correct_key%</kbd> key (<i>'yes'</i>)
     to start.
     `;
@@ -62,9 +63,10 @@ const PRE_TEST_INSTRUCTION =
     ;
 
 const DEBRIEF_MESSAGE = `
-    <h1>End of the experiment</h1><br><br>
+    <h1>End of the experiment</h1>
+    <br>
+    <br>
     <h2>Thank you for participating!</h2>
     `;
 
 const DEBRIEF_MESSAGE_DURATION = 3000;
-
