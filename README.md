@@ -30,7 +30,6 @@ The essential sub trial phases for _one_ trial for this boilerplate experiment a
 Only in this _last phase_, as soon as the "test item" is being presented, the participant can respond with the keyboard.
 
 # Output
-
 The data of _all_ (sub) _trial phases_ are logged in the data, but the output data can be filtered after data collection in many ways.
 Please read the [general primer on jsPsych's data](https://github.com/UiL-OTS-labs/jspsych-output) if you are new to jsPsych data output.
 
@@ -68,62 +67,28 @@ The crucial trial/sub-trial phase (decision phase) output may look similar to th
 	},
 	//(...)
 ```
+# Getting started 
+People _affiliated to our lab__ can use the information [from our lab webiste](https://uilots-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please follow [this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/).
 
-- Some of them are native to jsPsych and have been mentioned in the primer on data output. 
-- Others have been explicitly added to the data in the ```on_finish()``` method call that happens further down in the `present_word` trial definition. 
-- Open ```index.html``` in your plain text editor for more details.
+### Make your experiment ready for use with the data server
 
-Here is a description of the above example, using "#" as comments on the `"key: value"` pairs:
-
-```JSON
-                                               #this is a comment
-
-"rt": 368.0000000000073,
-"stimulus": "<p class='stimulus'>crawse</p>",  # Reaction Time, in miliseconds (jsPysch default)
-"key_press": 76,                               # The word or string and/or its HTML specifics (jsPsych default)
-"condition": "NON_WORD",                       # ASCII code of keyboard key pressed within phase (jsPysch default)
-"word": "crawse",                              # timelineVariable from 'stimuli.js' (UiL template default)
-"prime": "piano",                              # timelineVariable from 'stimuli.js' (UiL template default)
-"id": 2,                                       # timelineVariable from 'stimuli.js' (UiL template default)
-"trial_phase": "present_word",                 # timelineVariable from 'stimuli.js' (UiL template default)
-"useful_data_flag": true,                      # (UiL template default filter flag)
-"correct_response": 0,                         # timelineVariable from 'stimuli.js' (UiL template default)
-"trial_type": "html-keyboard-response",        # jsPysch default
-"trial_index": 25,                             # jsPysch default                          
-"time_elapsed": 44933,                         # jsPysch default
-"internal_node_id": "0.0-11.0-2.1",            # jsPysch default
-"subject": "f9pdgg60",                         # Subject ID (from index.html)(UiL template default)             
-"list": "my_one_and_only_list",                # Name of the list of epxerimental stimuli (UiL template default)
-"correct": true,                               # Scored response value {true or talse }(UiL template default)
-"key_chosen_ascii": 76,                        # Info on key chosen in experiment trial (UiL template default)
-"key_chosen_char": "L",                        # Info on key chosen in experiment trial (UiL template default)
-"yes_key": "A",                                # Info on key defined for participant for choosing 'yes' (UiL template default)
-"no_key": "L"                                  # Info on key defined for participant for choosing 'no' (UiL template default)
+### Update access key
+In the file `globals.js` is a variable:
+```javascript
+const ACCESS_KEY = '00000000-0000-0000-0000-000000000000';
 ```
+Before uploading your experimentto the UiL-OTS data server, you will need to change this to the access_key that you obtained when your experiment was approved. For elaborate info see `globals.js`.
+
 
 ### Adapting stimuli
 - Open the file `stimuli.js` in your plain text editor.
-- Note there is a list, called LIST_1
+- There is a list, called LIST_1:
 
 ```javacript
-const LIST_1 = [//...
+const LIST_1 = [ // stimuli and timeline variables
 
 ```
 -  This list can be adapted to your own needs, i.e, you can replace values, make the list longer (don't forget to increment the 'id' values for new items!).
 - If you need to implement a more complex design, you should read the `stimuli.js` file (and its comment sections) a little better. 
-- For an example of a Latin square design, please have a look [here](https://github.com/UiL-OTS-labs/jspsych-spr-mw) for some inspiration. 
-
-In short: you can add additional lists if your experiment requires this, but then you also have to edit some other values in stimuli.js in order for your experiment to work as intended.
-
-## Prepare for the data server setup (only for people affiliated to our lab!)
-
-### Updating access key
-In the file `globals.js` is a variable:
-```javascript
-const ACCESS_KEY = 'zeekretkey';
-```
-For uploading to the UiL-OTS data server you will need to change this to the access_key that you obtained when your experiment was approved. For elaborate info see `globals.js`.
-
-Good luck!
-
+- For an example of a Latin square design, please have a look [here](https://github.com/UiL-OTS-labs/jspsych-spr-mw).
 
