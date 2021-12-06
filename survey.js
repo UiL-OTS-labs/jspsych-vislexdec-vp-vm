@@ -1,19 +1,12 @@
-////////////////
-// SURVEY
-///////////////
 
 let repeat_survey = false;
 
 const PREPARE_FOR_SURVEY = "<h1>Please answer some questions first</h1>";
 
-// experiment: one can use the UU style for the HTML survey plugin by appending the style below...
-// however, this is not as of yet possible in the second type of survey plugin
-// might be solved with milestone with things discussed here:
-// https://github.com/jspsych/jsPsych/issues/554#event-3434758022 
-
-
-// with other survey plugin(s) than html, UU styling is more of a  hassle
-// we should discuss css presets for UU/UiL at some point.
+// experiment: one can use the UU style for the HTML survey plugin by appending
+// the style below... However, this is not as of yet possible in the second
+// type of survey plugin might be solved with milestone with things discussed
+// here: https://github.com/jspsych/jsPsych/issues/554#event-3434758022 
 
 const MULTI_CHOICE_HTML =`
     <div class="survey">
@@ -37,12 +30,12 @@ const MULTI_CHOICE_HTML =`
 
     <label for="native_language">What is your native language?</label>
     <input type="text" id="native_language" name="native_language"
-        pattern="[a-zA-Z]+" placeholder="Dutch" required>
+         placeholder="Dutch" required>
     <span class="validity"></span>
     <br> 
     <br> 
     </div>
-    `
+    `;
 
 // these constants are used in the survery multip[le choice block]
 // with this survey plugin, UU styling is not easy to implement
@@ -51,15 +44,18 @@ const BILINGUAL_QUESTION = `
     <a href="https://en.wikipedia.org/wiki/Multilingualism" target="_blank">multilingual</a>
     environment?
     `;
+
 const BILINGUAL_OPTIONS = ["No","Yes"];
 const DYSLEXIC_QUESTION = `Are you 
     <a href="https://en.wikipedia.org/wiki/Dyslexia" target="_blank">dyslexic</a>?
     `;
+
 const DYSLEXIC_OPTIONS = ["No", "Yes"];
 const SEX_QUESTION = `
     What is your
     <a href="https://en.wikipedia.org/wiki/Sex" target="_blank">biological sex</a>?
     `;
+
 const SEX_OPTIONS = ["Female", "Male", "Other", "Prefer not to say"];
 const HAND_QUESTION = 'Which hand do you prefer to write with?';
 const HAND_OPTIONS = ["Left", "Right"];
@@ -178,3 +174,4 @@ let survey_procedure = {
         }
     }
 };
+
