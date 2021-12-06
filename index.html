@@ -164,7 +164,7 @@
                        "<p>" + GENERIC_CHECK + "</p></div>";
             },
             choices: [OK_BUTTON_TEXT],
-            response_ends_trial: true
+            response_ends_trial: true,
         };
 
         let instruction_screen_practice = {
@@ -320,6 +320,7 @@
                 data.key_chosen_char = key_chosen_char;
                 data.yes_key = yes_key;
                 data.no_key = no_key;
+                data.integer_correct = data.correct ? 1 : 0;
             }
         };
 
