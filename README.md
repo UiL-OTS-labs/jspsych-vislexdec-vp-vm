@@ -15,7 +15,7 @@ The participant first sees a fixation cross, then a (forward) _mask_ is presente
 
 A reference that descibes this variant's method:
 
-		Jacob, G., Heyer, V., & Veríssimo, J. (2018). Aiming at the same target: A masked priming study directly comparing derivation and inflection in the second language. International Journal of Bilingualism, 22(6), 619–637. https://doi.org/10.1177/1367006916688333
+Jacob, G., Heyer, V., & Veríssimo, J. (2018). Aiming at the same target: A masked priming study directly comparing derivation and inflection in the second language. International Journal of Bilingualism, 22(6), 619–637. https://doi.org/10.1177/1367006916688333
 
 
 Crucial trial phases (sub trial phases):
@@ -38,54 +38,55 @@ Essential output for the _'true experimental'_ purpose in this template are:
 The crucial trial/sub-trial phase (decision phase) output may look similar to this:
 
 ```json
-	{
-		"rt": 330.00000000000364,
-		"stimulus": "<p class='stimulus'>PALVE</p>",
-		"key_press": 76,
-		"condition": "PRACTICE",
-		"word": "PALVE",
-		"prime": "onion",
-		"prime_mask": "#####",
-		"id": 1,
-		"trial_phase": "present_word",
-		"useful_data_flag": true,
-		"correct_response": 0,
-		"trial_type": "html-keyboard-response",
-		"trial_index": 13,
-		"time_elapsed": 28717,
-		"internal_node_id": "0.0-8.0-3.0",
-		"subject": "t3kfvvyq",
-		"list": "my_one_and_only_list",
-		"correct": true,
-                "integer_correct" : 1,
-		"key_chosen_ascii": 76,
-		"key_chosen_char": "L",
-		"yes_key": "A",
-		"no_key": "L"
-	},
-	//(...)
+{
+    "rt": 330.00000000000364,
+    "stimulus": "<p class='stimulus'>PALVE</p>",
+    "key_press": 76,
+    "condition": "PRACTICE",
+    "word": "PALVE",
+    "prime": "onion",
+    "prime_mask": "#####",
+    "id": 1,
+    "trial_phase": "present_word",
+    "useful_data_flag": true,
+    "expected_answer": 0,
+    "trial_type": "html-keyboard-response",
+    "trial_index": 13,
+    "time_elapsed": 28717,
+    "internal_node_id": "0.0-8.0-3.0",
+    "subject": "t3kfvvyq",
+    "list": "my_one_and_only_list",
+    "correct": true,
+            "integer_correct" : 1,
+    "key_chosen_ascii": 76,
+    "key_chosen_char": "L",
+    "yes_key": "A",
+    "no_key": "L"
+},
+
 ```
+
 Variable name (key) | Description          | Unit  | Type           | Comments                             | jsPsych default | Template default | Plugin name
 --------------------|----------------------|-------|----------------|--------------------------------------|-----------------|------------------|------------
-"rt"                | Reaction Time        | ms.   | float          | Reaction time in milliseconds        | yes             |                  |            
+"rt"                | Reaction Time        | ms.   | float          | Reaction time in milliseconds        | yes             |                  |
 stimulus"           | stimulus (html)      |       | string/html    |                                      | yes             |                  |
 "key_press"         | Keyboard response    |       | string/object? | https://en.wikipedia.org/wiki/ASCII  | yes             |                  | html-keyboard-response
 "condition"         | Condition            |       | string         | See ```stimuli.js```                 | no              | yes              |
-"word"              | Decision phase item  |       | string/html    | See ```stimuli.js, index.html```     | no              | yes              | 
+"word"              | Decision phase item  |       | string/html    | See ```stimuli.js, index.html```     | no              | yes              |
 "prime"             | Prime phase item     |       | string/html    | (...)                                | no              | yes              |
 "prime_mask"        | Mask item            |       | string/html    | (...)                                | no              | yes              |
 "id"                | ID/code              |       |                | (...)                                | yes             |                  |
-"trial_phase"       | Trial phase          |       |                | (...)                                | no              | yes              | 
-"useful_data_flag"  | Filter flag          |       | boolean        |                                      | no              | yes              | 
-_"expected_answer"_ | TODO change!         |       | todo           | Now (still) named "correct_response" | no              | no/yes/willbe.   | 
+"trial_phase"       | Trial phase          |       |                | (...)                                | no              | yes              |
+"useful_data_flag"  | Filter flag          |       | boolean        |                                      | no              | yes              |
+"expected_answer"   | TODO change!         |       | todo           | Now (still) named "correct_response" | no              | no/yes/willbe.   |
 "trial_type"        | What plugin was used |       |                |                                      | yes             |                  | "html-keyboard-response"
-"trial_index"       | jsPsych index        |       |                |                            	   | yes             |                  |	
+"trial_index"       | jsPsych index        |       |                |                            	       | yes             |                  |
 "time_elapsed".     | jsPsych time object  | ms    | int (/float?)  | For instance: 45062                  | yes             |                  |
 "internal_node_id.  | jsPsych node object  |       |                | For instance:"0.0-11.0-1.4"          | yes             |                  |
 "subject"           | Subject ID           |       |                | For instance: "8oo722dq"             |                 | yes              |
-"list"              | Stimulus list name.  |       | string         | For instance: "my_one_and_only_list" | no              | yes              | 
-"correct"           | Scoring result       |       | Boolean        | 'true or false' score of response    |                 | yes              |   
-"integer_correct"   | Scoring result       |       | integer        | 1 of 0 for correct or incorrect      |                 | yes              |   
+"list"              | Stimulus list name.  |       | string         | For instance: "my_one_and_only_list" | no              | yes              |
+"correct"           | Scoring result       |       | Boolean        | 'true or false' score of response    |                 | yes              |
+"integer_correct"   | Scoring result       |       | integer        | 1 of 0 for correct or incorrect      |                 | yes              |
 "key_chosen_ascii"  |                      |       |                | For instance: 65                     | no              | yes              |
 "key_chosen_char"   |                      |       |                | For instance: "A"                    | no              | yes              |
 "yes_key"           |                      |       |                | For instance:  "A"                   | no              | yes              |
