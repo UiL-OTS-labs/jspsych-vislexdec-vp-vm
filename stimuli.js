@@ -25,14 +25,14 @@ const PRACTICE_ITEMS = [
         word: "PALVE", 
         prime: "onion",
         pmask: "#####",
-        correct: 0
+        expected_answer: 0
     },
     { id: 2,
         item_type: PRACTICE,
         word: "HOT",
         prime: "stapler",
         pmask: "#######",
-        correct: 1
+        expected_answer: 1
     }
 ];
 
@@ -43,7 +43,7 @@ const LIST_1 = [
         word: "SLIRQUE",
         prime: "eyes",
         pmask: "####",
-        correct: 0
+        expected_answer: 0
     },
     {
         id: 2,
@@ -51,7 +51,7 @@ const LIST_1 = [
         word: "CRAWSE",
         prime: "piano",
         pmask: "#####",
-        correct: 0
+        expected_answer: 0
     },
     {
         id: 3,
@@ -59,7 +59,7 @@ const LIST_1 = [
         word: "THWURP",
         prime: "rabbit",
         pmask: "######",
-        correct: 0
+        expected_answer: 0
     },
     {
         id: 4,
@@ -67,7 +67,7 @@ const LIST_1 = [
         word: "CLEM",
         prime: "flower",
         pmask: "######",
-        correct: 0
+        expected_answer: 0
     },
     {
         id: 5,
@@ -75,7 +75,7 @@ const LIST_1 = [
         word: "WHITE",
         prime: "snow",
         pmask: "####",
-        correct: 1 
+        expected_answer: 1 
     },
     {
         id: 6,
@@ -83,7 +83,7 @@ const LIST_1 = [
         word: "TRAVEL",
         prime: "suitcase",
         pmask: "########",
-        correct: 1
+        expected_answer: 1
     },
     {
         id: 7,
@@ -91,7 +91,7 @@ const LIST_1 = [
         word: "LETTER",
         prime: "garden",
         pmask: "######",
-        correct: 1
+        expected_answer: 1
     },
     {
         id: 8,
@@ -99,7 +99,7 @@ const LIST_1 = [
         word: "CLOWN",
         prime: "forest",
         pmask: "######",
-        correct: 1 
+        expected_answer: 1 
     }
 ];
 
